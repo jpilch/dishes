@@ -7,7 +7,46 @@
     flex-basis: 30%;
     position: relative;
     justify-content: flex-start;
-    gap: 1em;
+    gap: 2em;
+    font-size: 0.9rem;
+
+    &__field {
+        @include flex-container;
+        position: relative;
+    }
+
+    &__label {
+        flex: 0.5;
+        font-style: italic;
+    }
+
+    &__input,
+    &__select {
+        flex: 1;
+        font-size: inherit;
+        padding: 0.5em 1em;
+        border-radius: 0.3em;
+        outline: none;
+        border: 1px solid #ddd;
+        caret-color: #000;
+    }
+
+    &__select {
+        cursor: pointer;
+    }
+
+    &__input--error,
+    &__select--error {
+        border: 1px solid red;
+    }
+
+    &__error {
+        font-size: 0.8em;
+        color: red;
+        position: absolute;
+        bottom: -1.5em;
+        right: 0;
+    }
 }
 
 .form__heading {
