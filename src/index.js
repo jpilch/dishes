@@ -8,10 +8,8 @@ import App from './features/app/App';
 import store from "./features/app/store";
 
 ReactDOM.render(
-    <React.StrictMode>
-        <Provider store={store}>
-            <App />
-        </Provider>
-    </React.StrictMode>,
+    <Provider store={store}>
+        <App />
+    </Provider>,
     document.getElementById('root')
 );
