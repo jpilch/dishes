@@ -6,7 +6,7 @@
 
     justify-content: flex-start;
     min-height: 100vh;
-    gap: 2em;
+    gap: 5em;
 
     &__hero {
         position: relative;
@@ -38,6 +38,8 @@
     }
 
     &__form {
+        @include flex-container;
+        align-items: flex-start;
         height: calc(100vh - 22em);
     }
 }

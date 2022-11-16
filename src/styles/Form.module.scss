@@ -1,0 +1,23 @@
+@import "mixins";
+
+.form {
+    @include flex-container;
+    @include flex-column;
+    height: 27em;
+    flex-basis: 30%;
+    position: relative;
+    justify-content: flex-start;
+    gap: 1em;
+}
+
+.form__heading {
+    text-align: center;
+}
+
+.form__buttons {
+    @include flex-container;
+    gap: 2em;
+    position: absolute;
+    bottom: 0;
+    align-self: center;
+}

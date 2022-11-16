@@ -5,6 +5,9 @@ import v from "./field-validators";
 import c from "./field-components";
 import dishFields from "./dish-fields";
 
+import styles from "../../styles/Form.module.scss";
+
+
 let Form = (props) => {
     const {
         handleSubmit,
@@ -15,7 +18,11 @@ let Form = (props) => {
     } = props;
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form
+            className={styles.form}
+            onSubmit={handleSubmit}
+        >
+            <h2 className={styles.form__heading}>Create your recipe</h2>
             <Field
                 name="name"
                 type="text"
@@ -37,7 +44,7 @@ let Form = (props) => {
                 validate={v.required}
             />
             {type && dishFields.get(type)}
-            <div>
+            <div className={styles.form__buttons}>
                 <button
                     type="submit"
                     disabled={pristine || submitting}
