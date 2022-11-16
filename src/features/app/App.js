@@ -1,5 +1,6 @@
 import styles from "../../styles/App.module.scss";
 import Form from "../dishes/Form";
+import handleSubmit from "../dishes/handle-submit";
 
 function App() {
     return (
@@ -16,7 +17,7 @@ function App() {
                 </div>
             </section>
             <section className={styles.main__form}>
-                <Form />
+                <Form onSubmit={handleSubmit} />
             </section>
         </main>
     );

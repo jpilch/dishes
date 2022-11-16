@@ -8,7 +8,7 @@ import dishFields from "./dish-fields";
 import styles from "../../styles/Form.module.scss";
 
 
-let Form = (props) => {
+function Form(props) {
     const {
         handleSubmit,
         pristine,
@@ -20,7 +20,10 @@ let Form = (props) => {
     return (
         <form
             className={styles.form}
-            onSubmit={handleSubmit}
+            onSubmit={e => {
+                e.preventDefault();
+                handleSubmit();
+            }}
         >
             <h2 className={styles.form__heading}>Create your recipe</h2>
             <Field

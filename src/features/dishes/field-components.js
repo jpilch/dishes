@@ -3,7 +3,6 @@ import cn from "classnames";
 import styles from "../../styles/Form.module.scss";
 
 const renderInputField = ({ input, label, type, step, meta: { touched, error } }) => {
-    console.log({ styles });
     return (
         <div className={styles.form__field}>
             <label className={styles.form__label}>
