@@ -46,12 +46,14 @@ let Form = (props) => {
             {type && dishFields.get(type)}
             <div className={styles.form__buttons}>
                 <button
+                    className={styles.form__button}
                     type="submit"
                     disabled={pristine || submitting}
                 >
                     Submit
                 </button>
                 <button
+                    className={styles.form__button}
                     type="button"
                     disabled={pristine || submitting}
                     onClick={reset}
