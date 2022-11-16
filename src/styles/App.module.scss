@@ -40,6 +40,6 @@
     &__form {
         @include flex-container;
         align-items: flex-start;
-        height: calc(100vh - 22em);
+        height: calc(100vh - 28em);
     }
 }
