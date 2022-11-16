@@ -1,7 +1,9 @@
-import { Field, reduxForm } from 'redux-form';
+import { Field, reduxForm, formValueSelector } from 'redux-form';
+import { connect } from "react-redux";
 
 import v from "./field-validators";
 import c from "./field-components";
+import dishFields from "./dish-fields";
 
 let Form = (props) => {
     const {
@@ -9,6 +11,7 @@ let Form = (props) => {
         pristine,
         reset,
         submitting,
+        type
     } = props;
 
     return (
@@ -33,6 +36,7 @@ let Form = (props) => {
                 label="Dish type"
                 validate={v.required}
             />
+            {type && dishFields.get(type)}
             <div>
                 <button
                     type="submit"
@@ -56,5 +60,11 @@ Form = reduxForm({
     form: 'Form'
 })(Form);
 
+const selector = formValueSelector("Form");
+Form = connect((state) => {
+    const type = selector(state, "type");
+
+    return { type };
+})(Form);
 
 export default Form;
