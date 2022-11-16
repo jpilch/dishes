@@ -1,4 +1,5 @@
 import styles from "../../styles/App.module.scss";
+import Form from "../dishes/Form";
 
 function App() {
     return (
@@ -15,7 +16,7 @@ function App() {
                 </div>
             </section>
             <section className={styles.main__form}>
-
+                <Form />
             </section>
         </main>
     );
