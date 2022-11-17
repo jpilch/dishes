@@ -3,8 +3,8 @@
 .form {
     @include flex-container;
     @include flex-column;
-    height: 28em;
-    flex-basis: 30%;
+    height: 30em;
+    flex-basis: 40%;
     position: relative;
     justify-content: flex-start;
     gap: 2em;
@@ -22,18 +22,40 @@
         align-self: center;
     }
 
+    &__fieldset {
+        @include flex-container;
+        @include flex-column;
+        font-size: inherit;
+        gap: 2em;
+        padding: 2em 1em;
+        border-radius: 0.5em;
+        justify-content: flex-start;
+        border: 1px solid #333;
+    }
+
+    &__legend {
+        background-color: #222;
+        border-radius: 0.5em;
+        font-weight: bold;
+        padding: 0.3em 2em;
+        color: #fff;
+        font-size: 1em;
+    }
+
     &__field {
         @include flex-container;
         position: relative;
+        gap: 1em;
     }
 
     &__label {
-        flex: 0.5;
-        font-style: italic;
+        flex: 0.4;
+        text-align: right;
     }
 
     &__input,
     &__select {
+        background-color: #fff;
         flex: 1;
         font-size: inherit;
         padding: 0.5em 1em;

@@ -28,29 +28,33 @@ function Form(props) {
                 handleSubmit();
             }}
         >
-            <h2 className={styles.form__heading}>Create your recipe</h2>
-            <Field
-                name="name"
-                type="text"
-                component={c.renderInputField}
-                label="Dish name"
-                validate={v.required}
-            />
-            <Field
-                name="preparation_time"
-                type="text"
-                component={c.renderInputField}
-                label="Preparation time"
-                validate={[v.required, v.inTimeFormat]}
-            />
-            <Field
-                name="type"
-                component={c.renderSelectField}
-                label="Dish type"
-                validate={v.required}
-                onChange={handleTypeChange(dispatch)}
-            />
-            {type && dishFields.get(type)}
+            <fieldset className={styles.form__fieldset}>
+                <legend className={styles.form__legend}>
+                    Create your recipe
+                </legend>
+                <Field
+                    name="name"
+                    type="text"
+                    component={c.renderInputField}
+                    label="Dish name"
+                    validate={v.required}
+                />
+                <Field
+                    name="preparation_time"
+                    type="text"
+                    component={c.renderInputField}
+                    label="Preparation time"
+                    validate={[v.required, v.inTimeFormat]}
+                />
+                <Field
+                    name="type"
+                    component={c.renderSelectField}
+                    label="Dish type"
+                    validate={v.required}
+                    onChange={handleTypeChange(dispatch)}
+                />
+                {type && dishFields.get(type)}
+            </fieldset>
             <div className={styles.form__buttons}>
                 <button
                     className={styles.form__button}
