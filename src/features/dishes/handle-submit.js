@@ -1,3 +1,5 @@
+import { SubmissionError } from "redux-form";
+
 const numberFields = new Set([
     "no_of_slices",
     "spiciness_scale",
@@ -29,5 +31,10 @@ export default async function handleSubmit(values) {
         body: body,
     });
     const data = await response.json();
-    alert(`Server responded with:\n\n${JSON.stringify(data, null, 2)}`);
+
+    if (response.status === 400) {
+        throw new SubmissionError(data)
+    }
+
+    alert(`Request successful. Server responded with:\n\n${JSON.stringify(data, null, 2)}`);
 }
