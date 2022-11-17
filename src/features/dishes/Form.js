@@ -1,5 +1,5 @@
 import { Field, reduxForm, formValueSelector } from 'redux-form';
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 
 import v from "./field-validators";
 import c from "./field-components";
@@ -14,8 +14,11 @@ function Form(props) {
         pristine,
         reset,
         submitting,
-        type
+        type,
+        handleTypeChange
     } = props;
+
+    const dispatch = useDispatch();
 
     return (
         <form
@@ -45,6 +48,7 @@ function Form(props) {
                 component={c.renderSelectField}
                 label="Dish type"
                 validate={v.required}
+                onChange={handleTypeChange(dispatch)}
             />
             {type && dishFields.get(type)}
             <div className={styles.form__buttons}>

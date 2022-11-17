@@ -1,6 +1,6 @@
-import { SubmissionError } from "redux-form";
+import { SubmissionError, clearFields } from "redux-form";
 
-export default async function handleSubmit(values) {
+export async function handleSubmit(values) {
     const url = process.env.REACT_APP_API_URL;
     const body = JSON.stringify(values);
 
@@ -18,4 +18,17 @@ export default async function handleSubmit(values) {
         throw new SubmissionError(data)
     }
     alert(`Request successful. Server responded with:\n\n${JSON.stringify(data, null, 2)}`);
+}
+
+export function handleTypeChange(dispatch) {
+    return function (event, newValue, previousValue, name) {
+        const toClear = [
+            "name",
+            "no_of_slices",
+            "diameter",
+            "spiciness_scale",
+            "slices_of_bread",
+        ];
+        dispatch(clearFields("Form", false, false, ...toClear));
+    }
 }

@@ -1,6 +1,6 @@
 import styles from "../../styles/App.module.scss";
 import Form from "../dishes/Form";
-import handleSubmit from "../dishes/handle-submit";
+import { handleSubmit, handleTypeChange } from "../dishes/form-handlers";
 
 function App() {
     return (
@@ -17,7 +17,10 @@ function App() {
                 </div>
             </section>
             <section className={styles.main__form}>
-                <Form onSubmit={handleSubmit} />
+                <Form
+                    onSubmit={handleSubmit}
+                    handleTypeChange={handleTypeChange}
+                />
             </section>
         </main>
     );
