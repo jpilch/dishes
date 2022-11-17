@@ -23,6 +23,7 @@ function Form(props) {
             onSubmit={e => {
                 e.preventDefault();
                 handleSubmit();
+                reset();
             }}
         >
             <h2 className={styles.form__heading}>Create your recipe</h2>

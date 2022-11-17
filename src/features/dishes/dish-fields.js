@@ -20,7 +20,7 @@ const pizzaFields = (
 
 const soupFields = (
     <>
-        <Field name="spiceness_scale" type="number"
+        <Field name="spiciness_scale" type="number"
             component={c.renderInputField} label="Spiciness scale"
             validate={[v.required, v.int, v.onSpiceScale]}
         />
