@@ -23,7 +23,6 @@ export async function handleSubmit(values) {
 export function handleTypeChange(dispatch) {
     return function (event, newValue, previousValue, name) {
         const toClear = [
-            "name",
             "no_of_slices",
             "diameter",
             "spiciness_scale",
