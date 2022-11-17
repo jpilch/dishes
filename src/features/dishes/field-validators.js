@@ -6,6 +6,12 @@ function int(value) {
         : undefined
 }
 
+function positive(value) {
+    return value && parseFloat(value) <= 0
+        ? 'Must be positive'
+        : undefined;
+}
+
 function intInRange(from, to) {
     return function (value) {
         return int(value) || (value < from || value > to)
@@ -33,6 +39,7 @@ function inTimeFormat(text) {
 export default {
     required,
     int,
+    positive,
     float,
     onSpiceScale,
     inTimeFormat
