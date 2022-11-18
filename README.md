@@ -16,7 +16,6 @@ $ npx create-react-app -V
 
 2. Clone the repository
 ```bash
-$ mkdir dishes
 $ git clone https://github.com/jpilch/dishes.git
 $ cd dishes
 ```
@@ -32,11 +31,11 @@ $ npm install
 $ npm run start
 ```
 
-5. Your default browser should open at port 3000. Make sure this port isn't currenty occupied by another process.
+Your default browser should open at port 3000. Make sure this port isn't currenty occupied by another process.
 
 ---
 
-This repository contains the solution to certain recruitment task. 
+This repository contains the solution to a certain recruitment task. 
 See this project live @ [Netlify](https://dishes-recruitment-task.netlify.app/).
 
 This project was initialized with the help of `create-react-app`.  You can find all used npm packages with their corresponding versions in `package.json` file.
