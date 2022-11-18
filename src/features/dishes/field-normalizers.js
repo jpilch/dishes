@@ -8,7 +8,9 @@ function toFloat(value) {
     return isNaN(parsed) ? "" : parsed;
 }
 
-export default {
+const normalizers = {
     toInt,
     toFloat
 }
+
+export default normalizers;

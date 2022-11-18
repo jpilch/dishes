@@ -61,7 +61,9 @@ const renderSelectField = ({ input, label, type, meta: { touched, error } }) => 
     );
 }
 
-export default {
+const components = {
     renderInputField,
     renderSelectField
 }
+
+export default components;

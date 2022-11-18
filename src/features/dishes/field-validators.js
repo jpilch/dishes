@@ -36,7 +36,7 @@ function inTimeFormat(text) {
         : undefined;
 }
 
-export default {
+const validators = {
     required,
     int,
     positive,
@@ -44,3 +44,5 @@ export default {
     onSpiceScale,
     inTimeFormat
 };
+
+export default validators;

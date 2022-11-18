@@ -8,7 +8,7 @@ import dishFields from "./dish-fields";
 import styles from "../../styles/Form.module.scss";
 
 
-function Form(props) {
+let Form = (props) => {
     const {
         handleSubmit,
         pristine,
