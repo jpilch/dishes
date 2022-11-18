@@ -1,13 +1,10 @@
-import { combineReducers } from "redux";
+import { combineReducers, createStore } from "redux";
 import { reducer as reduxFormReducer } from "redux-form";
-import { configureStore } from "@reduxjs/toolkit";
 
-const reducer = combineReducers({
+const rootReducer = combineReducers({
     form: reduxFormReducer,
 });
 
-const store = configureStore({
-    reducer,
-});
+const store = createStore(rootReducer);
 
 export default store;
